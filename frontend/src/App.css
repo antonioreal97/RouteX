@@ -1,0 +1,35 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.App-header {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.App-section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.App-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
