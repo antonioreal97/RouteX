@@ -40,7 +40,21 @@ Este projeto utiliza as seguintes tecnologias e ferramentas:
 
 A estrutura principal do projeto é organizada da seguinte forma:
 
-RouteX/ │ ├── backend/ # Código do servidor Node.js │ ├── src/ # Lógica da aplicação backend │ ├── package.json # Dependências do backend │ └── Dockerfile # Configuração do container backend │ ├── frontend/ # Código do cliente React.js │ ├── src/ # Lógica da aplicação frontend │ ├── public/ # Recursos públicos (ícones, index.html, etc.) │ ├── package.json # Dependências do frontend │ └── Dockerfile # Configuração do container frontend │ ├── docker-compose.yml # Configuração para orquestrar os containers └── README.md # Documentação do projeto
+RouteX/
+│
+├── backend/                   # Código do servidor Node.js
+│   ├── src/                   # Lógica da aplicação backend
+│   ├── package.json           # Dependências do backend
+│   └── Dockerfile             # Configuração do container backend
+│
+├── frontend/                  # Código do cliente React.js
+│   ├── src/                   # Lógica da aplicação frontend
+│   ├── public/                # Recursos públicos (ícones, index.html, etc.)
+│   ├── package.json           # Dependências do frontend
+│   └── Dockerfile             # Configuração do container frontend
+│
+├── docker-compose.yml         # Configuração para orquestrar os containers
+└── README.md                  # Documentação do projeto
 
 bash
 Copiar código
