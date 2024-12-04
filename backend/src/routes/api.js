@@ -1,13 +1,12 @@
 const express = require('express');
-const db = require('../models/database'); // SQLite database (if needed for local data)
-const Location = require('../models/database-mongo'); // MongoDB model for real-time telemetry
+const Location = require('../models/Location'); // Modelo MongoDB para armazenar localizações
 const router = express.Router();
 
 // =====================
 // Endpoint para adicionar telemetria
 // =====================
 router.post('/telemetry', async (req, res) => {
-  const { vehicleId, latitude, longitude } = req.body;
+  const { vehicleId, latitude, longitude, timestamp } = req.body;
 
   // Validação de entrada
   if (!vehicleId || !latitude || !longitude) {
@@ -16,7 +15,12 @@ router.post('/telemetry', async (req, res) => {
 
   try {
     // Salva a telemetria no MongoDB
-    const location = new Location({ vehicleId, latitude, longitude });
+    const location = new Location({
+      vehicleId,
+      latitude,
+      longitude,
+      timestamp: timestamp || Date.now(), // Usa o timestamp atual se não for fornecido
+    });
     await location.save();
 
     // Retorna resposta de sucesso
@@ -80,7 +84,7 @@ router.get('/vehicles/:id/locations', async (req, res) => {
 });
 
 // =====================
-// Endpoint para apagar todas as localizações de um veículo (opcional)
+// Endpoint para apagar todas as localizações de um veículo
 // =====================
 router.delete('/vehicles/:id/locations', async (req, res) => {
   const vehicleId = req.params.id;
